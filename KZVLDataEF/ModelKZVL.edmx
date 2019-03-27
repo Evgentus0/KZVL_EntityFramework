@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище KZVLModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Divizions">
+          <Key>
+            <PropertyRef Name="DZ_Id" />
+          </Key>
+          <Property Name="DZ_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DZ_Number" Type="int" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="GR_Id" />
+          </Key>
+          <Property Name="GR_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GR_Name" Type="nchar" MaxLength="1" />
+          <Property Name="GR_BestPlayer.Players_Id" Type="int" />
+          <Property Name="GR_Divizion.Divizions_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="PL_Id" />
+          </Key>
+          <Property Name="PL_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PL_Number" Type="int" />
+          <Property Name="PL_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="PL_Height" Type="int" />
+          <Property Name="PL_Role.Role_Id" Type="int" />
+          <Property Name="PL_Team.Teams_Id" Type="int" />
+          <Property Name="PL_CountOfBestPlayerMatch" Type="int" />
+          <Property Name="PL_Category" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RL_Id" />
+          </Key>
+          <Property Name="RL_Id" Type="int" Nullable="false" />
+          <Property Name="RL_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="TM_Id" />
+          </Key>
+          <Property Name="TM_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TM_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="TM_Group.Groups_Id" Type="int" />
+          <Property Name="TM_Rating" Type="int" />
+          <Property Name="TM_Captain.Players_Id" Type="int" />
+        </EntityType>
+        <Association Name="FK_Groups_Divizions">
+          <End Role="Divizions" Type="Self.Divizions" Multiplicity="0..1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Divizions">
+              <PropertyRef Name="DZ_Id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="GR_Divizion.Divizions_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Players">
+          <End Role="Players" Type="Self.Players" Multiplicity="0..1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="PL_Id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="GR_BestPlayer.Players_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Players_Role1">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Players" Type="Self.Players" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RL_Id" />
+            </Principal>
+            <Dependent Role="Players">
+              <PropertyRef Name="PL_Role.Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Players_Teams">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="0..1" />
+          <End Role="Players" Type="Self.Players" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="TM_Id" />
+            </Principal>
+            <Dependent Role="Players">
+              <PropertyRef Name="PL_Team.Teams_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teams_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GR_Id" />
+            </Principal>
+            <Dependent Role="Teams">
+              <PropertyRef Name="TM_Group.Groups_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teams_Players">
+          <End Role="Players" Type="Self.Players" Multiplicity="0..1" />
+          <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="PL_Id" />
+            </Principal>
+            <Dependent Role="Teams">
+              <PropertyRef Name="TM_Captain.Players_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище KZVLModelContainer">
+          <EntitySet Name="Divizions" EntityType="Self.Divizions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Groups_Divizions" Association="Self.FK_Groups_Divizions">
+            <End Role="Divizions" EntitySet="Divizions" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Players" Association="Self.FK_Groups_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Players_Role1" Association="Self.FK_Players_Role1">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Players" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Players_Teams" Association="Self.FK_Players_Teams">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="Players" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teams_Groups" Association="Self.FK_Teams_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Teams" EntitySet="Teams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teams_Players" Association="Self.FK_Teams_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="Teams" EntitySet="Teams" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KZVLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Divizions">
+          <Key>
+            <PropertyRef Name="DZ_Id" />
+          </Key>
+          <Property Name="DZ_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DZ_Number" Type="Int32" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_Groups_Divizions" FromRole="Divizions" ToRole="Groups" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="GR_Id" />
+          </Key>
+          <Property Name="GR_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GR_Name" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="GR_BestPlayer_Players_Id" Type="Int32" />
+          <Property Name="GR_Divizion_Divizions_Id" Type="Int32" />
+          <NavigationProperty Name="Divizions" Relationship="Self.FK_Groups_Divizions" FromRole="Groups" ToRole="Divizions" />
+          <NavigationProperty Name="Players" Relationship="Self.FK_Groups_Players" FromRole="Groups" ToRole="Players" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK_Teams_Groups" FromRole="Groups" ToRole="Teams" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="PL_Id" />
+          </Key>
+          <Property Name="PL_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PL_Number" Type="Int32" />
+          <Property Name="PL_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PL_Height" Type="Int32" />
+          <Property Name="PL_Role_Role_Id" Type="Int32" />
+          <Property Name="PL_Team_Teams_Id" Type="Int32" />
+          <Property Name="PL_CountOfBestPlayerMatch" Type="Int32" />
+          <Property Name="PL_Category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_Groups_Players" FromRole="Players" ToRole="Groups" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Players_Role1" FromRole="Players" ToRole="Role" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK_Players_Teams" FromRole="Players" ToRole="Teams" />
+          <NavigationProperty Name="Teams1" Relationship="Self.FK_Teams_Players" FromRole="Players" ToRole="Teams" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RL_Id" />
+          </Key>
+          <Property Name="RL_Id" Type="Int32" Nullable="false" />
+          <Property Name="RL_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Players" Relationship="Self.FK_Players_Role1" FromRole="Role" ToRole="Players" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="TM_Id" />
+          </Key>
+          <Property Name="TM_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TM_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TM_Group_Groups_Id" Type="Int32" />
+          <Property Name="TM_Rating" Type="Int32" />
+          <Property Name="TM_Captain_Players_Id" Type="Int32" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_Teams_Groups" FromRole="Teams" ToRole="Groups" />
+          <NavigationProperty Name="Players" Relationship="Self.FK_Players_Teams" FromRole="Teams" ToRole="Players" />
+          <NavigationProperty Name="Players1" Relationship="Self.FK_Teams_Players" FromRole="Teams" ToRole="Players" />
+        </EntityType>
+        <Association Name="FK_Groups_Divizions">
+          <End Role="Divizions" Type="Self.Divizions" Multiplicity="0..1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Divizions">
+              <PropertyRef Name="DZ_Id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="GR_Divizion_Divizions_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Players">
+          <End Role="Players" Type="Self.Players" Multiplicity="0..1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="PL_Id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="GR_BestPlayer_Players_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teams_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GR_Id" />
+            </Principal>
+            <Dependent Role="Teams">
+              <PropertyRef Name="TM_Group_Groups_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Players_Role1">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Players" Type="Self.Players" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RL_Id" />
+            </Principal>
+            <Dependent Role="Players">
+              <PropertyRef Name="PL_Role_Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Players_Teams">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="0..1" />
+          <End Role="Players" Type="Self.Players" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="TM_Id" />
+            </Principal>
+            <Dependent Role="Players">
+              <PropertyRef Name="PL_Team_Teams_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teams_Players">
+          <End Role="Players" Type="Self.Players" Multiplicity="0..1" />
+          <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="PL_Id" />
+            </Principal>
+            <Dependent Role="Teams">
+              <PropertyRef Name="TM_Captain_Players_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KZVLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Divizions" EntityType="Self.Divizions" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" />
+          <EntitySet Name="Players" EntityType="Self.Players" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" />
+          <AssociationSet Name="FK_Groups_Divizions" Association="Self.FK_Groups_Divizions">
+            <End Role="Divizions" EntitySet="Divizions" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Players" Association="Self.FK_Groups_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teams_Groups" Association="Self.FK_Teams_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Teams" EntitySet="Teams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Players_Role1" Association="Self.FK_Players_Role1">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Players" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Players_Teams" Association="Self.FK_Players_Teams">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="Players" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teams_Players" Association="Self.FK_Teams_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="Teams" EntitySet="Teams" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KZVLModelContainer" CdmEntityContainer="KZVLEntities">
+          <EntitySetMapping Name="Divizions">
+            <EntityTypeMapping TypeName="KZVLModel.Divizions">
+              <MappingFragment StoreEntitySet="Divizions">
+                <ScalarProperty Name="DZ_Id" ColumnName="DZ_Id" />
+                <ScalarProperty Name="DZ_Number" ColumnName="DZ_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="KZVLModel.Groups">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="GR_Id" ColumnName="GR_Id" />
+                <ScalarProperty Name="GR_Name" ColumnName="GR_Name" />
+                <ScalarProperty Name="GR_BestPlayer_Players_Id" ColumnName="GR_BestPlayer.Players_Id" />
+                <ScalarProperty Name="GR_Divizion_Divizions_Id" ColumnName="GR_Divizion.Divizions_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="KZVLModel.Players">
+              <MappingFragment StoreEntitySet="Players">
+                <ScalarProperty Name="PL_Id" ColumnName="PL_Id" />
+                <ScalarProperty Name="PL_Number" ColumnName="PL_Number" />
+                <ScalarProperty Name="PL_Name" ColumnName="PL_Name" />
+                <ScalarProperty Name="PL_Height" ColumnName="PL_Height" />
+                <ScalarProperty Name="PL_Role_Role_Id" ColumnName="PL_Role.Role_Id" />
+                <ScalarProperty Name="PL_Team_Teams_Id" ColumnName="PL_Team.Teams_Id" />
+                <ScalarProperty Name="PL_CountOfBestPlayerMatch" ColumnName="PL_CountOfBestPlayerMatch" />
+                <ScalarProperty Name="PL_Category" ColumnName="PL_Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="KZVLModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RL_Id" ColumnName="RL_Id" />
+                <ScalarProperty Name="RL_Name" ColumnName="RL_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="KZVLModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="KZVLModel.Teams">
+              <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="TM_Id" ColumnName="TM_Id" />
+                <ScalarProperty Name="TM_Name" ColumnName="TM_Name" />
+                <ScalarProperty Name="TM_Group_Groups_Id" ColumnName="TM_Group.Groups_Id" />
+                <ScalarProperty Name="TM_Rating" ColumnName="TM_Rating" />
+                <ScalarProperty Name="TM_Captain_Players_Id" ColumnName="TM_Captain.Players_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
