@@ -43,6 +43,7 @@ namespace WinFrmKzvl
             this.roleBindingSource.DataSource = ctx.Role.Local.ToBindingList();
         }
 
+        #region Save
         private void buttonSaveTeams_Click(object sender, EventArgs e)
         {
             ctx.SaveChanges();
@@ -67,7 +68,9 @@ namespace WinFrmKzvl
         {
             ctx.SaveChanges();
         }
+        #endregion
 
+        #region Delete
         private void buttonDeleteTeams_Click(object sender, EventArgs e)
         {
             try
@@ -151,5 +154,127 @@ namespace WinFrmKzvl
                 MessageBox.Show("помилка при читанні дивізіону");
             }
         }
+        #endregion
+
+        #region Search
+        private void buttonSearchTeam_Click(object sender, EventArgs e)
+        {
+            var change = ctx.ChangeTracker.Entries<KZVLDataEF.KZVLEntities>().Where(a => a.State != EntityState.Unchanged).ToList();
+
+            if (change.Count !=0)
+            {
+                MessageBox.Show("Необхідно зберегти зміни!");
+            }
+            else
+            {
+                try
+                {
+                    FrmTeam dialoge = new FrmTeam();
+                    dialoge.ShowDialog(this);
+                    dialoge.Dispose();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Помилка!");
+                }
+            }
+        }
+
+        private void buttonSearchPlayers_Click(object sender, EventArgs e)
+        {
+            var change = ctx.ChangeTracker.Entries<KZVLDataEF.KZVLEntities>().Where(a => a.State != EntityState.Unchanged).ToList();
+
+            if (change.Count != 0)
+            {
+                MessageBox.Show("Необхідно зберегти зміни!");
+            }
+            else
+            {
+                try
+                {
+                    FrmPlayer dialoge = new FrmPlayer();
+                    dialoge.ShowDialog(this);
+                    dialoge.Dispose();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Помилка!");
+                }
+            }
+        }
+
+        private void buttonSearchGroups_Click(object sender, EventArgs e)
+        {
+            var change = ctx.ChangeTracker.Entries<KZVLDataEF.KZVLEntities>().Where(a => a.State != EntityState.Unchanged).ToList();
+
+            if (change.Count != 0)
+            {
+                MessageBox.Show("Необхідно зберегти зміни!");
+            }
+            else
+            {
+                try
+                {
+                    FrmGroup dialoge = new FrmGroup();
+                    dialoge.ShowDialog(this);
+                    dialoge.Dispose();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Помилка!");
+                }
+            }
+        }
+        #endregion
+
+        #region validating
+        int? pValue;
+        
+        private void dataGridViewTeams_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            int b=0;
+            if (e.ColumnIndex == 4)
+            {
+                if(!int.TryParse(e.FormattedValue.ToString(), out b)&&e.FormattedValue.ToString()!="")
+                {
+                    MessageBox.Show("Incorrect value!");
+
+                    dataGridViewTeams.CurrentCell.Value = pValue;
+                }
+            }
+        }
+        private void dataGridViewTeams_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                    pValue = (int?)dataGridViewTeams.CurrentCell.Value;
+            }
+        }
+
+        private void dataGridViewPlayers_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            int b = 0;
+            if (e.ColumnIndex == 1|| e.ColumnIndex==3|| e.ColumnIndex == 8)
+            {
+                if (!int.TryParse(e.FormattedValue.ToString(), out b) && e.FormattedValue.ToString()!="")
+                {
+                    MessageBox.Show("Incorrect value!");
+
+                    dataGridViewPlayers.CurrentCell.Value = pValue;
+                }
+            }
+        }
+        private void dataGridViewPlayers_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.ColumnIndex == 1 || e.ColumnIndex == 3 || e.ColumnIndex == 8)
+            {
+                pValue = (int?)dataGridViewPlayers.CurrentCell.Value;
+            }
+
+        }
+        #endregion
     }
 }

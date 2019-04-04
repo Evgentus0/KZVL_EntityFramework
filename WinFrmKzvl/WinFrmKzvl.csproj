@@ -53,16 +53,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGroup.Designer.cs">
+      <DependentUpon>FrmGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmKZVL.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmKZVL.Designer.cs">
       <DependentUpon>FrmKZVL.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlayer.Designer.cs">
+      <DependentUpon>FrmPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTeam.Designer.cs">
+      <DependentUpon>FrmTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmGroup.resx">
+      <DependentUpon>FrmGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmKZVL.resx">
       <DependentUpon>FrmKZVL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlayer.resx">
+      <DependentUpon>FrmPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTeam.resx">
+      <DependentUpon>FrmTeam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
