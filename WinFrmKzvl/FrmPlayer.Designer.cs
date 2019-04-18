@@ -46,23 +46,23 @@
             this.comboBoxName = new System.Windows.Forms.ComboBox();
             this.comboBoxNumber = new System.Windows.Forms.ComboBox();
             this.dataGridViewTeamsFind = new System.Windows.Forms.DataGridView();
-            this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pLIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pLNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pLNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pLHeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pLRoleRoleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pLTeamTeamsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pLCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teams1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxParametrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeamsFind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
@@ -224,6 +224,7 @@
             // 
             // dataGridViewTeamsFind
             // 
+            this.dataGridViewTeamsFind.AllowUserToAddRows = false;
             this.dataGridViewTeamsFind.AllowUserToOrderColumns = true;
             this.dataGridViewTeamsFind.AutoGenerateColumns = false;
             this.dataGridViewTeamsFind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -247,18 +248,6 @@
             this.dataGridViewTeamsFind.Name = "dataGridViewTeamsFind";
             this.dataGridViewTeamsFind.Size = new System.Drawing.Size(1029, 332);
             this.dataGridViewTeamsFind.TabIndex = 13;
-            // 
-            // roleBindingSource
-            // 
-            this.roleBindingSource.DataSource = typeof(KZVLDataEF.Role);
-            // 
-            // teamsBindingSource
-            // 
-            this.teamsBindingSource.DataSource = typeof(KZVLDataEF.Teams);
-            // 
-            // playersBindingSource
-            // 
-            this.playersBindingSource.DataSource = typeof(KZVLDataEF.Players);
             // 
             // pLIdDataGridViewTextBoxColumn
             // 
@@ -301,6 +290,10 @@
             this.Column1.Name = "Column1";
             this.Column1.ValueMember = "RL_Id";
             // 
+            // roleBindingSource
+            // 
+            this.roleBindingSource.DataSource = typeof(KZVLDataEF.Role);
+            // 
             // pLTeamTeamsIdDataGridViewTextBoxColumn
             // 
             this.pLTeamTeamsIdDataGridViewTextBoxColumn.DataPropertyName = "PL_Team_Teams_Id";
@@ -316,6 +309,10 @@
             this.Column2.HeaderText = "Teams";
             this.Column2.Name = "Column2";
             this.Column2.ValueMember = "TM_Id";
+            // 
+            // teamsBindingSource
+            // 
+            this.teamsBindingSource.DataSource = typeof(KZVLDataEF.Teams);
             // 
             // pLCountOfBestPlayerMatchDataGridViewTextBoxColumn
             // 
@@ -356,6 +353,10 @@
             this.teams1DataGridViewTextBoxColumn.HeaderText = "Teams1";
             this.teams1DataGridViewTextBoxColumn.Name = "teams1DataGridViewTextBoxColumn";
             this.teams1DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // playersBindingSource
+            // 
+            this.playersBindingSource.DataSource = typeof(KZVLDataEF.Players);
             // 
             // FrmPlayer
             // 

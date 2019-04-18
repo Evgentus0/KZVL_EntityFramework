@@ -48,21 +48,7 @@
             this.tabPlayers = new System.Windows.Forms.TabPage();
             this.buttonSearchPlayers = new System.Windows.Forms.Button();
             this.dataGridViewPlayers = new System.Windows.Forms.DataGridView();
-            this.pLIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pLNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pLNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pLHeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pLRoleRoleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pLTeamTeamsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pLCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teams1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonDeletePlayers = new System.Windows.Forms.Button();
             this.buttonSavePlayers = new System.Windows.Forms.Button();
             this.tabGroups = new System.Windows.Forms.TabPage();
@@ -70,7 +56,16 @@
             this.buttonDeleteGroups = new System.Windows.Forms.Button();
             this.buttonSaveGroups = new System.Windows.Forms.Button();
             this.dataGridViewGroups = new System.Windows.Forms.DataGridView();
+            this.gRNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gRIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.divizionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.divizionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playersDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teamsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabDivizions = new System.Windows.Forms.TabPage();
             this.buttonDeleteDivizions = new System.Windows.Forms.Button();
             this.buttonSaveDivizions = new System.Windows.Forms.Button();
@@ -82,18 +77,23 @@
             this.buttonDeleteRole = new System.Windows.Forms.Button();
             this.buttonSaveRole = new System.Windows.Forms.Button();
             this.dataGridViewRole = new System.Windows.Forms.DataGridView();
-            this.gRNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gRIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.divizionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playersDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rLNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rLIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playersDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pLNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pLIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pLNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pLHeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pLRoleRoleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.pLTeamTeamsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pLCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teamsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teams1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabCntrlKZVL.SuspendLayout();
             this.tabTeams.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeams)).BeginInit();
@@ -289,8 +289,8 @@
             this.dataGridViewPlayers.AutoGenerateColumns = false;
             this.dataGridViewPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPlayers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pLIdDataGridViewTextBoxColumn,
             this.pLNumberDataGridViewTextBoxColumn,
+            this.pLIdDataGridViewTextBoxColumn,
             this.pLNameDataGridViewTextBoxColumn,
             this.pLHeightDataGridViewTextBoxColumn,
             this.pLRoleRoleIdDataGridViewTextBoxColumn,
@@ -311,111 +311,9 @@
             this.dataGridViewPlayers.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewPlayers_CellBeginEdit);
             this.dataGridViewPlayers.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridViewPlayers_CellValidating);
             // 
-            // pLIdDataGridViewTextBoxColumn
-            // 
-            this.pLIdDataGridViewTextBoxColumn.DataPropertyName = "PL_Id";
-            this.pLIdDataGridViewTextBoxColumn.HeaderText = "PL_Id";
-            this.pLIdDataGridViewTextBoxColumn.Name = "pLIdDataGridViewTextBoxColumn";
-            this.pLIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // pLNumberDataGridViewTextBoxColumn
-            // 
-            this.pLNumberDataGridViewTextBoxColumn.DataPropertyName = "PL_Number";
-            this.pLNumberDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.pLNumberDataGridViewTextBoxColumn.MaxInputLength = 2;
-            this.pLNumberDataGridViewTextBoxColumn.Name = "pLNumberDataGridViewTextBoxColumn";
-            // 
-            // pLNameDataGridViewTextBoxColumn
-            // 
-            this.pLNameDataGridViewTextBoxColumn.DataPropertyName = "PL_Name";
-            this.pLNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.pLNameDataGridViewTextBoxColumn.MaxInputLength = 50;
-            this.pLNameDataGridViewTextBoxColumn.Name = "pLNameDataGridViewTextBoxColumn";
-            // 
-            // pLHeightDataGridViewTextBoxColumn
-            // 
-            this.pLHeightDataGridViewTextBoxColumn.DataPropertyName = "PL_Height";
-            this.pLHeightDataGridViewTextBoxColumn.HeaderText = "Height";
-            this.pLHeightDataGridViewTextBoxColumn.MaxInputLength = 3;
-            this.pLHeightDataGridViewTextBoxColumn.Name = "pLHeightDataGridViewTextBoxColumn";
-            // 
-            // pLRoleRoleIdDataGridViewTextBoxColumn
-            // 
-            this.pLRoleRoleIdDataGridViewTextBoxColumn.DataPropertyName = "PL_Role_Role_Id";
-            this.pLRoleRoleIdDataGridViewTextBoxColumn.HeaderText = "PL_Role_Role_Id";
-            this.pLRoleRoleIdDataGridViewTextBoxColumn.Name = "pLRoleRoleIdDataGridViewTextBoxColumn";
-            this.pLRoleRoleIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PL_Role_Role_Id";
-            this.Column3.DataSource = this.roleBindingSource;
-            this.Column3.DisplayMember = "RL_Name";
-            this.Column3.HeaderText = "Role";
-            this.Column3.Name = "Column3";
-            this.Column3.ValueMember = "RL_Id";
-            // 
             // roleBindingSource
             // 
             this.roleBindingSource.DataSource = typeof(KZVLDataEF.Role);
-            // 
-            // pLTeamTeamsIdDataGridViewTextBoxColumn
-            // 
-            this.pLTeamTeamsIdDataGridViewTextBoxColumn.DataPropertyName = "PL_Team_Teams_Id";
-            this.pLTeamTeamsIdDataGridViewTextBoxColumn.HeaderText = "PL_Team_Teams_Id";
-            this.pLTeamTeamsIdDataGridViewTextBoxColumn.Name = "pLTeamTeamsIdDataGridViewTextBoxColumn";
-            this.pLTeamTeamsIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "PL_Team_Teams_Id";
-            this.Column4.DataSource = this.teamsBindingSource;
-            this.Column4.DisplayMember = "TM_Name";
-            this.Column4.HeaderText = "Team";
-            this.Column4.Name = "Column4";
-            this.Column4.ValueMember = "TM_Id";
-            // 
-            // pLCountOfBestPlayerMatchDataGridViewTextBoxColumn
-            // 
-            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn.DataPropertyName = "PL_CountOfBestPlayerMatch";
-            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn.HeaderText = "Count Of Best Player Match";
-            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn.MaxInputLength = 3;
-            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn.Name = "pLCountOfBestPlayerMatchDataGridViewTextBoxColumn";
-            // 
-            // pLCategoryDataGridViewTextBoxColumn
-            // 
-            this.pLCategoryDataGridViewTextBoxColumn.DataPropertyName = "PL_Category";
-            this.pLCategoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.pLCategoryDataGridViewTextBoxColumn.MaxInputLength = 20;
-            this.pLCategoryDataGridViewTextBoxColumn.Name = "pLCategoryDataGridViewTextBoxColumn";
-            // 
-            // groupsDataGridViewTextBoxColumn1
-            // 
-            this.groupsDataGridViewTextBoxColumn1.DataPropertyName = "Groups";
-            this.groupsDataGridViewTextBoxColumn1.HeaderText = "Groups";
-            this.groupsDataGridViewTextBoxColumn1.Name = "groupsDataGridViewTextBoxColumn1";
-            this.groupsDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // roleDataGridViewTextBoxColumn
-            // 
-            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
-            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
-            this.roleDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // teamsDataGridViewTextBoxColumn
-            // 
-            this.teamsDataGridViewTextBoxColumn.DataPropertyName = "Teams";
-            this.teamsDataGridViewTextBoxColumn.HeaderText = "Teams";
-            this.teamsDataGridViewTextBoxColumn.Name = "teamsDataGridViewTextBoxColumn";
-            this.teamsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // teams1DataGridViewTextBoxColumn
-            // 
-            this.teams1DataGridViewTextBoxColumn.DataPropertyName = "Teams1";
-            this.teams1DataGridViewTextBoxColumn.HeaderText = "Teams1";
-            this.teams1DataGridViewTextBoxColumn.Name = "teams1DataGridViewTextBoxColumn";
-            this.teams1DataGridViewTextBoxColumn.Visible = false;
             // 
             // buttonDeletePlayers
             // 
@@ -503,9 +401,77 @@
             this.dataGridViewGroups.Size = new System.Drawing.Size(989, 410);
             this.dataGridViewGroups.TabIndex = 1;
             // 
+            // gRNameDataGridViewTextBoxColumn
+            // 
+            this.gRNameDataGridViewTextBoxColumn.DataPropertyName = "GR_Name";
+            this.gRNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.gRNameDataGridViewTextBoxColumn.MaxInputLength = 1;
+            this.gRNameDataGridViewTextBoxColumn.Name = "gRNameDataGridViewTextBoxColumn";
+            // 
+            // gRIdDataGridViewTextBoxColumn
+            // 
+            this.gRIdDataGridViewTextBoxColumn.DataPropertyName = "GR_Id";
+            this.gRIdDataGridViewTextBoxColumn.HeaderText = "GR_Id";
+            this.gRIdDataGridViewTextBoxColumn.Name = "gRIdDataGridViewTextBoxColumn";
+            this.gRIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // gRBestPlayerPlayersIdDataGridViewTextBoxColumn
+            // 
+            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn.DataPropertyName = "GR_BestPlayer_Players_Id";
+            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn.HeaderText = "GR_BestPlayer_Players_Id";
+            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn.Name = "gRBestPlayerPlayersIdDataGridViewTextBoxColumn";
+            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "GR_BestPlayer_Players_Id";
+            this.Column5.DataSource = this.playersBindingSource;
+            this.Column5.DisplayMember = "PL_Name";
+            this.Column5.HeaderText = "Best Player";
+            this.Column5.Name = "Column5";
+            this.Column5.ValueMember = "PL_Id";
+            // 
+            // gRDivizionDivizionsIdDataGridViewTextBoxColumn
+            // 
+            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.DataPropertyName = "GR_Divizion_Divizions_Id";
+            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.HeaderText = "Divizion";
+            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.MaxInputLength = 1;
+            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.Name = "gRDivizionDivizionsIdDataGridViewTextBoxColumn";
+            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "GR_Divizion_Divizions_Id";
+            this.Column6.DataSource = this.divizionsBindingSource;
+            this.Column6.DisplayMember = "DZ_Number";
+            this.Column6.HeaderText = "Divizion";
+            this.Column6.Name = "Column6";
+            this.Column6.ValueMember = "DZ_Id";
+            // 
             // divizionsBindingSource
             // 
             this.divizionsBindingSource.DataSource = typeof(KZVLDataEF.Divizions);
+            // 
+            // divizionsDataGridViewTextBoxColumn
+            // 
+            this.divizionsDataGridViewTextBoxColumn.DataPropertyName = "Divizions";
+            this.divizionsDataGridViewTextBoxColumn.HeaderText = "Divizions";
+            this.divizionsDataGridViewTextBoxColumn.Name = "divizionsDataGridViewTextBoxColumn";
+            this.divizionsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // playersDataGridViewTextBoxColumn1
+            // 
+            this.playersDataGridViewTextBoxColumn1.DataPropertyName = "Players";
+            this.playersDataGridViewTextBoxColumn1.HeaderText = "Players";
+            this.playersDataGridViewTextBoxColumn1.Name = "playersDataGridViewTextBoxColumn1";
+            this.playersDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // teamsDataGridViewTextBoxColumn1
+            // 
+            this.teamsDataGridViewTextBoxColumn1.DataPropertyName = "Teams";
+            this.teamsDataGridViewTextBoxColumn1.HeaderText = "Teams";
+            this.teamsDataGridViewTextBoxColumn1.Name = "teamsDataGridViewTextBoxColumn1";
+            this.teamsDataGridViewTextBoxColumn1.Visible = false;
             // 
             // tabDivizions
             // 
@@ -625,74 +591,6 @@
             this.dataGridViewRole.Size = new System.Drawing.Size(983, 411);
             this.dataGridViewRole.TabIndex = 1;
             // 
-            // gRNameDataGridViewTextBoxColumn
-            // 
-            this.gRNameDataGridViewTextBoxColumn.DataPropertyName = "GR_Name";
-            this.gRNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.gRNameDataGridViewTextBoxColumn.MaxInputLength = 1;
-            this.gRNameDataGridViewTextBoxColumn.Name = "gRNameDataGridViewTextBoxColumn";
-            // 
-            // gRIdDataGridViewTextBoxColumn
-            // 
-            this.gRIdDataGridViewTextBoxColumn.DataPropertyName = "GR_Id";
-            this.gRIdDataGridViewTextBoxColumn.HeaderText = "GR_Id";
-            this.gRIdDataGridViewTextBoxColumn.Name = "gRIdDataGridViewTextBoxColumn";
-            this.gRIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // gRBestPlayerPlayersIdDataGridViewTextBoxColumn
-            // 
-            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn.DataPropertyName = "GR_BestPlayer_Players_Id";
-            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn.HeaderText = "GR_BestPlayer_Players_Id";
-            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn.Name = "gRBestPlayerPlayersIdDataGridViewTextBoxColumn";
-            this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "GR_BestPlayer_Players_Id";
-            this.Column5.DataSource = this.playersBindingSource;
-            this.Column5.DisplayMember = "PL_Name";
-            this.Column5.HeaderText = "Best Player";
-            this.Column5.Name = "Column5";
-            this.Column5.ValueMember = "PL_Id";
-            // 
-            // gRDivizionDivizionsIdDataGridViewTextBoxColumn
-            // 
-            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.DataPropertyName = "GR_Divizion_Divizions_Id";
-            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.HeaderText = "Divizion";
-            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.MaxInputLength = 1;
-            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.Name = "gRDivizionDivizionsIdDataGridViewTextBoxColumn";
-            this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "GR_Divizion_Divizions_Id";
-            this.Column6.DataSource = this.divizionsBindingSource;
-            this.Column6.DisplayMember = "DZ_Number";
-            this.Column6.HeaderText = "Divizion";
-            this.Column6.Name = "Column6";
-            this.Column6.ValueMember = "DZ_Id";
-            // 
-            // divizionsDataGridViewTextBoxColumn
-            // 
-            this.divizionsDataGridViewTextBoxColumn.DataPropertyName = "Divizions";
-            this.divizionsDataGridViewTextBoxColumn.HeaderText = "Divizions";
-            this.divizionsDataGridViewTextBoxColumn.Name = "divizionsDataGridViewTextBoxColumn";
-            this.divizionsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // playersDataGridViewTextBoxColumn1
-            // 
-            this.playersDataGridViewTextBoxColumn1.DataPropertyName = "Players";
-            this.playersDataGridViewTextBoxColumn1.HeaderText = "Players";
-            this.playersDataGridViewTextBoxColumn1.Name = "playersDataGridViewTextBoxColumn1";
-            this.playersDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // teamsDataGridViewTextBoxColumn1
-            // 
-            this.teamsDataGridViewTextBoxColumn1.DataPropertyName = "Teams";
-            this.teamsDataGridViewTextBoxColumn1.HeaderText = "Teams";
-            this.teamsDataGridViewTextBoxColumn1.Name = "teamsDataGridViewTextBoxColumn1";
-            this.teamsDataGridViewTextBoxColumn1.Visible = false;
-            // 
             // rLNameDataGridViewTextBoxColumn
             // 
             this.rLNameDataGridViewTextBoxColumn.DataPropertyName = "RL_Name";
@@ -713,6 +611,108 @@
             this.playersDataGridViewTextBoxColumn2.HeaderText = "Players";
             this.playersDataGridViewTextBoxColumn2.Name = "playersDataGridViewTextBoxColumn2";
             this.playersDataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // pLNumberDataGridViewTextBoxColumn
+            // 
+            this.pLNumberDataGridViewTextBoxColumn.DataPropertyName = "PL_Number";
+            this.pLNumberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.pLNumberDataGridViewTextBoxColumn.MaxInputLength = 2;
+            this.pLNumberDataGridViewTextBoxColumn.Name = "pLNumberDataGridViewTextBoxColumn";
+            // 
+            // pLIdDataGridViewTextBoxColumn
+            // 
+            this.pLIdDataGridViewTextBoxColumn.DataPropertyName = "PL_Id";
+            this.pLIdDataGridViewTextBoxColumn.HeaderText = "PL_Id";
+            this.pLIdDataGridViewTextBoxColumn.Name = "pLIdDataGridViewTextBoxColumn";
+            this.pLIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pLNameDataGridViewTextBoxColumn
+            // 
+            this.pLNameDataGridViewTextBoxColumn.DataPropertyName = "PL_Name";
+            this.pLNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.pLNameDataGridViewTextBoxColumn.MaxInputLength = 50;
+            this.pLNameDataGridViewTextBoxColumn.Name = "pLNameDataGridViewTextBoxColumn";
+            // 
+            // pLHeightDataGridViewTextBoxColumn
+            // 
+            this.pLHeightDataGridViewTextBoxColumn.DataPropertyName = "PL_Height";
+            this.pLHeightDataGridViewTextBoxColumn.HeaderText = "Height";
+            this.pLHeightDataGridViewTextBoxColumn.MaxInputLength = 3;
+            this.pLHeightDataGridViewTextBoxColumn.Name = "pLHeightDataGridViewTextBoxColumn";
+            // 
+            // pLRoleRoleIdDataGridViewTextBoxColumn
+            // 
+            this.pLRoleRoleIdDataGridViewTextBoxColumn.DataPropertyName = "PL_Role_Role_Id";
+            this.pLRoleRoleIdDataGridViewTextBoxColumn.HeaderText = "PL_Role_Role_Id";
+            this.pLRoleRoleIdDataGridViewTextBoxColumn.Name = "pLRoleRoleIdDataGridViewTextBoxColumn";
+            this.pLRoleRoleIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PL_Role_Role_Id";
+            this.Column3.DataSource = this.roleBindingSource;
+            this.Column3.DisplayMember = "RL_Name";
+            this.Column3.HeaderText = "Role";
+            this.Column3.Name = "Column3";
+            this.Column3.ValueMember = "RL_Id";
+            // 
+            // pLTeamTeamsIdDataGridViewTextBoxColumn
+            // 
+            this.pLTeamTeamsIdDataGridViewTextBoxColumn.DataPropertyName = "PL_Team_Teams_Id";
+            this.pLTeamTeamsIdDataGridViewTextBoxColumn.HeaderText = "PL_Team_Teams_Id";
+            this.pLTeamTeamsIdDataGridViewTextBoxColumn.Name = "pLTeamTeamsIdDataGridViewTextBoxColumn";
+            this.pLTeamTeamsIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "PL_Team_Teams_Id";
+            this.Column4.DataSource = this.teamsBindingSource;
+            this.Column4.DisplayMember = "TM_Name";
+            this.Column4.HeaderText = "Team";
+            this.Column4.Name = "Column4";
+            this.Column4.ValueMember = "TM_Id";
+            // 
+            // pLCountOfBestPlayerMatchDataGridViewTextBoxColumn
+            // 
+            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn.DataPropertyName = "PL_CountOfBestPlayerMatch";
+            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn.HeaderText = "Count Of Best Player Match";
+            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn.MaxInputLength = 3;
+            this.pLCountOfBestPlayerMatchDataGridViewTextBoxColumn.Name = "pLCountOfBestPlayerMatchDataGridViewTextBoxColumn";
+            // 
+            // pLCategoryDataGridViewTextBoxColumn
+            // 
+            this.pLCategoryDataGridViewTextBoxColumn.DataPropertyName = "PL_Category";
+            this.pLCategoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.pLCategoryDataGridViewTextBoxColumn.MaxInputLength = 20;
+            this.pLCategoryDataGridViewTextBoxColumn.Name = "pLCategoryDataGridViewTextBoxColumn";
+            // 
+            // groupsDataGridViewTextBoxColumn1
+            // 
+            this.groupsDataGridViewTextBoxColumn1.DataPropertyName = "Groups";
+            this.groupsDataGridViewTextBoxColumn1.HeaderText = "Groups";
+            this.groupsDataGridViewTextBoxColumn1.Name = "groupsDataGridViewTextBoxColumn1";
+            this.groupsDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // roleDataGridViewTextBoxColumn
+            // 
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
+            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.roleDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // teamsDataGridViewTextBoxColumn
+            // 
+            this.teamsDataGridViewTextBoxColumn.DataPropertyName = "Teams";
+            this.teamsDataGridViewTextBoxColumn.HeaderText = "Teams";
+            this.teamsDataGridViewTextBoxColumn.Name = "teamsDataGridViewTextBoxColumn";
+            this.teamsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // teams1DataGridViewTextBoxColumn
+            // 
+            this.teams1DataGridViewTextBoxColumn.DataPropertyName = "Teams1";
+            this.teams1DataGridViewTextBoxColumn.HeaderText = "Teams1";
+            this.teams1DataGridViewTextBoxColumn.Name = "teams1DataGridViewTextBoxColumn";
+            this.teams1DataGridViewTextBoxColumn.Visible = false;
             // 
             // FrmKZVL
             // 
@@ -780,20 +780,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tMRatingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tMCaptainPlayersIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pLIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pLNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pLNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pLHeightDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pLRoleRoleIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pLTeamTeamsIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pLCountOfBestPlayerMatchDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pLCategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupsDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teamsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teams1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dZIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dZNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupsDataGridViewTextBoxColumn2;
@@ -809,6 +795,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rLNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rLIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn playersDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pLNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pLIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pLNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pLHeightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pLRoleRoleIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pLTeamTeamsIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pLCountOfBestPlayerMatchDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pLCategoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupsDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teamsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teams1DataGridViewTextBoxColumn;
     }
 }
 

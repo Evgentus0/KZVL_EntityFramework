@@ -38,23 +38,23 @@
             this.comboBoxName = new System.Windows.Forms.ComboBox();
             this.comboBoxBestPlayer = new System.Windows.Forms.ComboBox();
             this.dataGridViewGroupsSrc = new System.Windows.Forms.DataGridView();
-            this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.divizionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gRIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gRNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gRBestPlayerPlayersIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gRDivizionDivizionsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.divizionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.divizionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxParametrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGroupsSrc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divizionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSearch
@@ -135,6 +135,7 @@
             // 
             // dataGridViewGroupsSrc
             // 
+            this.dataGridViewGroupsSrc.AllowUserToAddRows = false;
             this.dataGridViewGroupsSrc.AllowUserToOrderColumns = true;
             this.dataGridViewGroupsSrc.AutoGenerateColumns = false;
             this.dataGridViewGroupsSrc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -153,18 +154,6 @@
             this.dataGridViewGroupsSrc.Name = "dataGridViewGroupsSrc";
             this.dataGridViewGroupsSrc.Size = new System.Drawing.Size(903, 332);
             this.dataGridViewGroupsSrc.TabIndex = 13;
-            // 
-            // playersBindingSource
-            // 
-            this.playersBindingSource.DataSource = typeof(KZVLDataEF.Players);
-            // 
-            // groupsBindingSource
-            // 
-            this.groupsBindingSource.DataSource = typeof(KZVLDataEF.Groups);
-            // 
-            // divizionsBindingSource
-            // 
-            this.divizionsBindingSource.DataSource = typeof(KZVLDataEF.Divizions);
             // 
             // gRIdDataGridViewTextBoxColumn
             // 
@@ -195,6 +184,10 @@
             this.Column1.Name = "Column1";
             this.Column1.ValueMember = "PL_Id";
             // 
+            // playersBindingSource
+            // 
+            this.playersBindingSource.DataSource = typeof(KZVLDataEF.Players);
+            // 
             // gRDivizionDivizionsIdDataGridViewTextBoxColumn
             // 
             this.gRDivizionDivizionsIdDataGridViewTextBoxColumn.DataPropertyName = "GR_Divizion_Divizions_Id";
@@ -210,6 +203,10 @@
             this.Column2.HeaderText = "Divizion";
             this.Column2.Name = "Column2";
             this.Column2.ValueMember = "DZ_Id";
+            // 
+            // divizionsBindingSource
+            // 
+            this.divizionsBindingSource.DataSource = typeof(KZVLDataEF.Divizions);
             // 
             // divizionsDataGridViewTextBoxColumn
             // 
@@ -232,6 +229,10 @@
             this.teamsDataGridViewTextBoxColumn.Name = "teamsDataGridViewTextBoxColumn";
             this.teamsDataGridViewTextBoxColumn.Visible = false;
             // 
+            // groupsBindingSource
+            // 
+            this.groupsBindingSource.DataSource = typeof(KZVLDataEF.Groups);
+            // 
             // FrmGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,8 +247,8 @@
             this.groupBoxParametrs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGroupsSrc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divizionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
